@@ -1,9 +1,9 @@
 <?php
-$baseurl='http://localhost/urlshortener/';
+$baseurl='http://us.openwavecomp.net/';
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "urlshortener";
+$password = "urlshortener43";
 $dbname = "urlshortener";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if(isset($_REQUEST['r'])){
