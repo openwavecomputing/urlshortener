@@ -12,7 +12,17 @@ if(isset($_REQUEST['r'])){
 	if(isset($result['original_url'])){
 	?>
 		<script>
-			window.location.href = "<?php echo $result['original_url']; ?>";
+			var re_url= "<?php echo $result['original_url']; ?>";
+			function isValid(text) {
+				return /\b(http|https)/.test(text);
+			}
+			if (isValid(re_url)) {
+				window.location.href = "<?php echo $result['original_url']; ?>";
+			} else {
+				window.location.href = "http://<?php echo $result['original_url']; ?>";
+			}
+
+			
 		</script>
 	<?php
 	}
